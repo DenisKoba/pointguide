@@ -220,34 +220,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    @font-face {
-        font-family: "Acrom Regular";
-        src: url('../fonts/Acrom-Regular.ttf');
-    }
-    @font-face {
-        font-family: "Acrom Bold";
-        src: url('../fonts/Acrom-Bold.ttf');
-    }
-    @font-face {
-        font-family: "Acrom ExtraBold";
-        src: url('../fonts/Acrom-ExtraBold.ttf');
-    }
-    @font-face {
-        font-family: "Circe Regular";
-        src: url('../fonts/Circe-Regular.ttf');
-    }
-    @font-face {
-        font-family: "Circe ExtraBold";
-        src: url('../fonts/Circe-ExtraBold.ttf');
-    }
-    @font-face {
-        font-family: "Circe Light";
-        src: url('../fonts/Circe-Light.ttf');
-    }
-    @font-face {
-        font-family: "Circe Thin";
-        src: url('../fonts/Circe-Thin.ttf');
-    }
+    @import url('https://fonts.googleapis.com/css?family=Questrial');
     .first-scroll {
         position: relative;
         overflow: hidden;
@@ -294,7 +267,7 @@ export default {
         text-align: center;
         color: #fff;
         padding: 40px 0 0 0;
-        font-family: "Circe Regular", sans-serif;
+        font-family: "Questrial", sans-serif;
     }
     .background-style {
         position: absolute;

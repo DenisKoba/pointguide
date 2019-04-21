@@ -137,10 +137,7 @@
 </script>
 
 <style scoped lang="scss">
-    @font-face {
-        font-family: "Acrom Regular";
-        src: url('../fonts/Acrom-Regular.ttf');
-    }
+    @import url('https://fonts.googleapis.com/css?family=Questrial');
 
     .active {
         display: block !important;
@@ -191,10 +188,14 @@
         box-shadow: 0px 0px 40px 4px rgba(23, 23, 23, 0.14);
         &__review-text {
             margin: 0;
+            line-height: 28px;
         }
         &__review {
             padding: 0 0 0 20px;
             display: none;
+        }
+        &__name {
+            color: #000000;
         }
     }
     .press-wrapper {

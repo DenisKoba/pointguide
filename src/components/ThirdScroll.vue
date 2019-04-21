@@ -65,10 +65,7 @@
 </script>
 
 <style scoped lang="scss">
-    @font-face {
-        font-family: "Acrom Regular";
-        src: url('../fonts/Acrom-Regular.ttf');
-    }
+    @import url('https://fonts.googleapis.com/css?family=Questrial');
     .third-section {
         background: #9b70fa;
         background: -moz-linear-gradient(top, #9b70fa 0%, #590ff2 100%);
@@ -115,11 +112,12 @@
         &__text {
             color: #fff;
             font-size: 22px;
+            line-height: 30px;
         }
         &__heading {
             color: #fff;
             font-size: 30px;
-            font-family: "Acrom Regular", sans-serif;
+            font-family: "Questrial", sans-serif;
         }
     }
     .active-first {

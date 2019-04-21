@@ -46,44 +46,18 @@ export default {
 </script>
 
 <style lang="scss">
-  @font-face {
-    font-family: "Acrom Regular";
-    src: url('fonts/Acrom-Regular.ttf');
-  }
-  @font-face {
-    font-family: "Acrom Bold";
-    src: url('fonts/Acrom-Bold.ttf');
-  }
-  @font-face {
-    font-family: "Acrom ExtraBold";
-    src: url('fonts/Acrom-ExtraBold.ttf');
-  }
-  @font-face {
-    font-family: "Circe Regular";
-    src: url('fonts/Circe-Regular.ttf');
-  }
-  @font-face {
-    font-family: "Circe ExtraBold";
-    src: url('fonts/Circe-ExtraBold.ttf');
-  }
-  @font-face {
-    font-family: "Circe Light";
-    src: url('fonts/Circe-Light.ttf');
-  }
-  @font-face {
-    font-family: "Circe Thin";
-    src: url('fonts/Circe-Thin.ttf');
-  }
-  body {
-    margin: 0;
-  }
+  @import url('https://fonts.googleapis.com/css?family=Questrial');
   #app {
-    font-family: "Circe Regular", sans-serif;
+    font-family: "Questrial", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
     position: relative;
     overflow: hidden;
+  }
+  body {
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
   }
   .wrapper {
     width: 100%;

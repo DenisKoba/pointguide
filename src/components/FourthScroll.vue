@@ -94,14 +94,7 @@
 </script>
 
 <style scoped lang="scss">
-    @font-face {
-        font-family: "Acrom Regular";
-        src: url('../fonts/Acrom-Regular.ttf');
-    }
-    @font-face {
-        font-family: "Circe Regular";
-        src: url('../fonts/Circe-Regular.ttf');
-    }
+    @import url('https://fonts.googleapis.com/css?family=Questrial');
     .fourth-scroll-title {
         text-align: center;
         color: #292a4b;
@@ -139,9 +132,10 @@
             margin: 20px 20px 0 0;
         }
         &__review-text {
-            font-family: "Circe", sans-serif;
+            font-family: "Questrial", sans-serif;
             color: #636683;
             font-weight: 300;
+            line-height: 26px;
         }
         &__author {
             display: flex;
