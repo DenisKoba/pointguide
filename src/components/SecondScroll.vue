@@ -81,9 +81,9 @@
                       class="circle__point-four circle__point">
                 </span>
                 <div class="circle__background">
-                   <!-- <PhoneIllustration v-if="isFirstDescription" />
-                    <SecondIllustration v-if="isSecondDescription" />-->
-                    <ThirdIllustration  />
+                    <PhoneIllustration v-if="isFirstDescription" />
+                    <SecondIllustration v-if="isSecondDescription" />
+                    <ThirdIllustration v-if="isThirdDescription" />
                 </div>
                 <vue-circle
                         v-if="activateAnimation"
