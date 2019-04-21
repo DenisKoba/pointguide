@@ -6,7 +6,7 @@
                 <div class="press-wrapper">
                     <h1 class="press__title title">We`re in press</h1>
                     <div class="press__publication" v-for="release in pressReleases" :class="{ active: release.slideNumber === currentSlide }">
-                        <img src="assets/img/press-logo.png" />
+                        <img src="../assets/img/press-logo.png" />
                         <h3 class="press__descr-title descr">{{ release.publicationName }}</h3>
                         <h3 class="press__descr descr">{{ release.text }}</h3>
                     </div>
