@@ -81,9 +81,9 @@
                       class="circle__point-four circle__point">
                 </span>
                 <div class="circle__background">
-                    <Illustrations  v-if="isFirstDescription" />
-                    <Illustrations v-if="isSecondDescription" />
-                    <Illustrations v-if="isThirdDescription" />
+                   <!-- <PhoneIllustration v-if="isFirstDescription" />
+                    <SecondIllustration v-if="isSecondDescription" />-->
+                    <ThirdIllustration  />
                 </div>
                 <vue-circle
                         v-if="activateAnimation"
@@ -109,13 +109,17 @@
 <script>
 /* eslint-disable */
 import VueCircle from 'vue2-circle-progress'
-import Illustrations from './illustration/Illustrations'
+import PhoneIllustration from './illustration/PhoneIllustration.vue'
+import SecondIllustration from './illustration/SecondIllustration.vue'
+import ThirdIllustration from './illustration/ThirdIllustration.vue'
 
 export default {
   name: 'SecondScroll',
   components: {
     VueCircle,
-    Illustrations,
+    PhoneIllustration,
+    SecondIllustration,
+    ThirdIllustration
   },
   data () {
     return {
