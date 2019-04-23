@@ -86,11 +86,19 @@ export default {
     font-weight: 500;
     margin: 20px 0 0 0;
   }
+  .VueCarousel-wrapper {
+    max-width: 1035px;
+    overflow: hidden;
+    margin: auto;
+  }
   .VueCarousel-inner {
-    margin: 80px 0 0 0;
+    margin: 50px auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .VueCarousel-navigation-button {
+    top: 38% !important;
   }
   .VueCarousel-navigation-prev, .VueCarousel-navigation-next {
     outline: none !important;
@@ -114,10 +122,12 @@ export default {
     }
   }
   .VueCarousel-navigation-next {
-    background-image: url("assets/img/buttonRight.svg")
+    background-image: url("assets/img/buttonRight.svg");
+    right: 55px !important;
   }
   .VueCarousel-navigation-prev {
-    background-image: url("assets/img/button.svg")
+    background-image: url("assets/img/button.svg");
+    left: 55px !important;
   }
 
   .VueCarousel-pagination {

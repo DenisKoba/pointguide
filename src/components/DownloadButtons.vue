@@ -2,12 +2,12 @@
     <div class="container">
         <div class="container__app-store container__button">
             <a href="#">
-                <img src="../assets/img/apple-button.svg">
+                <img class="button" src="../assets/img/apple-button.svg">
             </a>
         </div>
         <div class="container__google-play container__button">
             <a href="#">
-                <img src="../assets/img/google-button.svg" />
+                <img class="button" src="../assets/img/google-button.svg" />
             </a>
         </div>
     </div>
@@ -41,6 +41,14 @@ export default {
         }
         &__apple-pay {
             padding: 0 20px 0 0;
+        }
+    }
+    @media (max-width: 500px), (max-height: 420px){
+        .button {
+            height: 40px;
+        }
+        .container {
+            margin: 20px 0 0 0;
         }
     }
 </style>

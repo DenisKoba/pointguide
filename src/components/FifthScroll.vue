@@ -14,7 +14,7 @@
             </div>
             <div class="press-navigation">
                 <div class="press-navigation__current">
-                    <span class="press-navigation__current-slide">{{ currentSlide }}</span>
+                    <span class="press-navigation__current-slide">0{{ currentSlide }}</span>
                     <div class="press-navigation__nav-buttons">
                         <span @click="previousSlide" class="press-navigation__left">
                             <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@
     name: "FifthScroll",
     data() {
       return {
-        slides: [1, 2, 3],
+        slides: ['01', '02', '03', '04'],
         pressReleases: [
           {
             slideNumber: 1,
@@ -206,15 +206,20 @@
         display: flex;
         flex-direction: column;
         padding: 0 0 0 30px;
+        &__all-pages {
+            margin: 10px 0;
+        }
         &__slides {
-            font-size: 30px;
-            color: #636683;
-            padding: 0 30px 0 0;
+            padding: 0 22px 0 0;
+            font-size: 20px;
+            color: #aaadbe;
         }
         &__current-slide {
             font-size: 30px;
             color: #824bf7;
             min-width: 70px;
+            display: flex;
+            align-items: center;
         }
         &__nav-buttons {
             display: flex;
@@ -226,6 +231,7 @@
         &__left, &__right {
             cursor: pointer;
             transition: .3s;
+            opacity: .6;
             &:hover {
                 transition: .3s;
                 opacity: .8;
@@ -241,11 +247,11 @@
         position: absolute;
         top: 0;
         left: -30%;
-        background: #9b70fa;
-        background: -moz-linear-gradient(top, #9b70fa 0%, #590ff2 100%);
-        background: -webkit-linear-gradient(top, #9b70fa 0%,#590ff2 100%);
-        background: linear-gradient(to bottom, #9b70fa 0%,#590ff2 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b70fa', endColorstr='#590ff2',GradientType=0 );
+        background: #9364f9; /* Old browsers */
+        background: -moz-linear-gradient(45deg, #9364f9 0%, #6d2cf4 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, #9364f9 0%,#6d2cf4 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, #9364f9 0%,#6d2cf4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9364f9', endColorstr='#6d2cf4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
         z-index: 1;
     }
     .background-fifth-scroll {

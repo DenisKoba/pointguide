@@ -4,37 +4,38 @@
             <div class="options-container">
                 <h1 class="options-container__heading title">How it works</h1>
                 <div id="third-scroll" class="options" @click="updateProgress(25, 1)">
-                    <div class="options__wrapper">
-                        <img v-if="isFirstDescription" src="../assets/img/eye-icon.svg" />
-                        <img v-else src="../assets/img/eye-icon-active.svg" />
+                    <div :class="{ 'active-description': isFirstDescription }" class="options__wrapper">
+                        <img v-if="isFirstDescription" src="../assets/img/eye-icon-active.svg" />
+                        <img v-else src="../assets/img/eye-icon.svg" />
                         <div class="options__descr">
-                            <h3 class="options__name">How it works</h3>
+                            <h3 :class="{ 'active-description': isFirstDescription }" class="options__name">How it works</h3>
                             <p v-if="isFirstDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
                         </div>
                     </div>
                 </div>
                 <div class="options" @click="updateProgress(50, 2)">
-                    <div class="options__wrapper">
-                        <img v-if="isSecondDescription" src="../assets/img/point-icon.svg" />
-                        <img v-else src="../assets/img/point-icon-active.svg" />
+                    <div :class="{ 'active-description': isSecondDescription }" class="options__wrapper">
+                        <img v-if="isSecondDescription" src="../assets/img/point-icon-active.svg" />
+                        <img v-else src="../assets/img/point-icon.svg" />
                         <div class="options__descr">
-                            <h3 class="options__name">Friends</h3>
+                            <h3 :class="{ 'active-description': isSecondDescription }" class="options__name">Friends</h3>
                             <p v-if="isSecondDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
                         </div>
                     </div>
                 </div>
                 <div class="options" @click="updateProgress(75, 3)">
-                    <div class="options__wrapper">
-                        <img src="../assets/img/smile-icon.svg" v-if="isThirdDescription" />
-                        <img src="../assets/img/smile-icon-active.svg" v-else />
+                    <div :class="{ 'active-description': isThirdDescription }" class="options__wrapper">
+                        <img src="../assets/img/smile-icon-active.svg" v-if="isThirdDescription" />
+                        <img src="../assets/img/smile-icon.svg" v-else />
                         <div class="options__descr">
-                            <h3 class="options__name">Travel</h3>
+                            <h3 :class="{ 'active-description': isThirdDescription }" class="options__name">Travel</h3>
                             <p v-if="isThirdDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="circle">
+                <div class="empty-fill"></div>
                 <span
                       :class="{ active: currentProgress > 0 }"
                       class="circle__point-one circle__point">
@@ -52,9 +53,9 @@
                       class="circle__point-four circle__point">
                 </span>
                 <div class="circle__background">
-                    <PhoneIllustration v-if="isFirstDescription" />
-                    <SecondIllustration v-if="isSecondDescription" />
-                    <ThirdIllustration v-if="isThirdDescription" />
+                    <PhoneIllustration  />
+                    <!--<SecondIllustration v-if="isSecondDescription" />
+                    <ThirdIllustration v-if="isThirdDescription" />-->
                 </div>
                 <vue-circle
                         v-if="activateAnimation"
@@ -63,12 +64,12 @@
                         :reverse="false"
                         line-cap="round"
                         :fill="fill"
-                        empty-fill="rgba(0, 0, 0, .1)"
+                        empty-fill="rgba(251, 251, 251, 0)"
                         :animation-start-value="0.0"
                         :animation="isDuration"
                         :start-angle="0"
                         insert-mode="append"
-                        :thickness="2"
+                        :thickness="3"
                         ref="circle"
                         @vue-circle-progress="progress">
                 </vue-circle>
@@ -198,8 +199,8 @@ export default {
     .options {
         &__wrapper {
             display: flex;
+            align-items: center;
             padding: 20px 0 0 0;
-            align-items: end;
         }
         &__icon {
             width: 30px;
@@ -209,10 +210,17 @@ export default {
         }
         &__name {
             margin: 0;
+            color: #cad4da;
+            font-size: 20px;
+            font-weight: 900;
+            padding: 0 0 5px 0;
         }
         &__text {
             margin: 0;
             padding: 2px 0 10px 0;
+            color: #6a8095;
+            font-size: 20px;
+            font-weight: 300;
         }
         &__descr {
             padding: 0 0 0 10px;
@@ -227,11 +235,21 @@ export default {
             width: 400px;
             height: 400px;
             position: absolute;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 98.4%;
+                height: 98.4%;
+                border: 3px dashed #a7c1cc;
+                border-radius: 50%;
+                top: 0;
+                left: 0;
+            }
         }
         &__point {
             width: 20px;
             height: 20px;
-            border: 2px solid #dbdee1;
+            border: 3px solid #a7c1cc;
             background-color: #f4f7fc;
             border-radius: 50%;
             position: absolute;
@@ -243,7 +261,7 @@ export default {
         }
         &__point-two {
             right: calc(50% - 10px);
-            bottom: -4px;
+            bottom: -8px;
         }
         &__point-three {
             top: calc(50% - 10px);
@@ -261,5 +279,14 @@ export default {
     }
     .icon-active {
         opacity: 1 !important;
+    }
+    .active-description {
+        align-items: end;
+        color: #292a4b;
+    }
+    @media (max-width: 500px), (max-height: 420px){
+        .layout-second-scroll {
+            flex-direction: column-reverse;
+        }
     }
 </style>

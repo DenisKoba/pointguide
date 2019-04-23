@@ -106,6 +106,7 @@
             top: calc(60% - 325px);
             left: calc(50% - 450px);
             background-image: url("../assets/img/phones.png");
+            background-size: cover;
         }
         &__hips-two {
             width: 100%;
@@ -117,7 +118,7 @@
         &__city-two {
             width: 300px;
             height: 350px;
-            top: 27%;
+            top: 28%;
             right: 100px;
             z-index: -1;
             background-image: url("../assets/img/city-two.png");
@@ -125,7 +126,7 @@
         &__city {
             width: 300px;
             height: 350px;
-            top: 30%;
+            top: 32%;
             left: 100px;
             z-index: -1;
             background-image: url("../assets/img/city.png");

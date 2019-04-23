@@ -9,7 +9,7 @@
         </div>
         <div class="layout">
             <div class="header">
-                <svg width="251" height="59" viewBox="0 0 251 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo" width="251" height="59" viewBox="0 0 251 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.93438 35.7004C8.93438 35.7004 15.0658 43.2334 14.8907 48.6641C14.7155 53.9196 8.58401 41.3063 8.58401 41.3063L8.93438 35.7004Z" fill="url(#paint0_linear)"/>
                     <path d="M42.0443 29.9194V9.42279H23.6499L8.40888 14.5031L5.08038 29.9194V37.4523C5.08038 37.4523 4.55482 46.9123 7.18259 49.7152C9.98554 52.6933 16.6426 59 23.4747 59C30.3069 59 37.1391 52.6933 39.7669 49.7152C42.5698 46.7371 41.8691 37.4523 41.8691 37.4523L42.0443 29.9194Z" fill="url(#paint1_linear)"/>
                     <path d="M21.0221 32.5471V41.6567C21.0221 41.6567 21.0221 44.1093 23.6499 44.1093C26.2777 44.1093 26.2777 41.6567 26.2777 41.6567V32.5471H21.0221Z" fill="url(#paint2_linear)"/>
@@ -230,7 +230,7 @@ export default {
         background: linear-gradient(to bottom, #9b70fa 0%,#590ff2 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b70fa', endColorstr='#590ff2',GradientType=0 );
         display: block;
-        height: 100vh;
+        height: 920px;
         width: 100%;
     }
 
@@ -299,6 +299,7 @@ export default {
         }
         &__field-left {
             background-image: url('../assets/img/field-left.png');
+            background-size: contain;
             height: 315px;
             width: 1600px;
             bottom: 0;
@@ -344,10 +345,80 @@ export default {
     .slide-up.animate-active {
         transform: translateY(-100px);
     }
-
-    @media (min-width: 1700px){
+    @media (max-width: 500px), (max-height: 420px){
         .first-scroll {
-            height: 900px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        .logo {
+            width: 175px;
+        }
+        .header__contact {
+            font-size: 14px;
+            margin: 0;
+        }
+        .title {
+            font-size: 32px;
+            line-height: 35px;
+        }
+        .descr {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        .first-scroll {
+            height: 650px;
+        }
+        .background-first-scroll {
+            &__man {
+                background-size: contain;
+                width: 224px;
+                height: 320px;
+                bottom: -44px;
+                z-index: 20;
+                left: 20px;
+            }
+            &__bush {
+                background-position: bottom right;
+                background-size: contain;
+                height: 196px;
+                width: 600px;
+                right: -300px;
+                bottom: 0;
+            }
+            &__field-left {
+                background-size: cover;
+                height: 200px;
+                width: 600px;
+                bottom: 0;
+                left: 0;
+            }
+            &__field-right {
+                height: 200px;
+                width: 600px;
+                background-position: bottom right;
+                background-size: cover;
+                bottom: 0;
+                right: 0;
+            }
+            &__sights {
+                bottom: 35px;
+            }
+        }
+    }
+    @media (max-height: 420px) {
+        .layout {
+            width: 80%;
+        }
+        .background-first-scroll__field-left {
+            left: 188px;
+        }
+    }
+    @media (max-width: 320px) {
+        .logo {
+            width: 140px;
+        }
+        .header__contact {
+            font-size: 12px;
         }
     }
 </style>

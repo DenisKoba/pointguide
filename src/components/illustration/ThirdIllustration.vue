@@ -16,10 +16,10 @@
     .third-illustration {
         animation: animate-illustration-data-v-64e7e06c .3s ease forwards;
         position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 95%;
-        height: 95%;
+        top: 20px;
+        left: 20px;
+        width: 90%;
+        height: 90%;
         border-radius: 50%;
         overflow: hidden;
         background-color: #fff

@@ -99,6 +99,10 @@
         text-align: center;
         color: #292a4b;
     }
+    .fourth-scroll {
+        background-color: #f3f7fb;
+        padding: 30px 0 60px 0;
+    }
     .customer-reviews {
         align-items: center;
         justify-content: center;
@@ -146,9 +150,14 @@
                 padding: 0 10px 0 0;
             }
         }
+        &__name {
+            padding: 0 0 5px 0;
+        }
+        &__position {
+            color: #8ea0b0;
+        }
         &__name, &__position {
             margin: 0;
-            color: #292a4b;
         }
         &__name-wrapper {
             padding: 10px 0 0 0;
