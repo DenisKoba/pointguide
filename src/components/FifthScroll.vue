@@ -31,7 +31,28 @@
                     </div>
                 </div>
                 <div class="press-navigation__all-pages">
-                    <span v-for="slide in slides" class="press-navigation__slides">{{ slide }}</span>
+                    <span v-for="slide in slides"  class="press-navigation__slides">{{ slide }}</span>
+                </div>
+            </div>
+            <div class="press-navigation-mobile">
+                <div class="press-navigation__current">
+                    <div class="press-navigation__nav-buttons">
+                        <span @click="previousSlide" class="press-navigation__left">
+                            <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.2 36.4C28.2516 36.4 36.4 28.2516 36.4 18.2C36.4 8.14841 28.2516 0 18.2 0C8.14842 0 0 8.14841 0 18.2C0 28.2516 8.14842 36.4 18.2 36.4Z" fill="#E8EFFB"/>
+                                <path d="M12.3 18.2C12.3 17.9 12.4 17.6 12.7 17.3L20.2 9.79999C20.7 9.29999 21.5 9.29999 21.9 9.79999C22.4 10.3 22.4 11.1 21.9 11.5L15.3 18.1L21.9 24.7C22.4 25.2 22.4 26 21.9 26.4C21.4 26.9 20.6 26.9 20.2 26.4L12.7 18.9C12.4 18.9 12.3 18.5 12.3 18.2Z" fill="#8230FA"/>
+                            </svg>
+                        </span>
+                        <span @click="nextSlide" class="press-navigation__right">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M37.8985 21.4208C38.8085 11.4105 31.4312 2.55775 21.4208 1.64773C11.4105 0.737712 2.55775 8.115 1.64773 18.1254C0.737714 28.1357 8.115 36.9885 18.1254 37.8985C28.1357 38.8085 36.9885 31.4312 37.8985 21.4208Z" fill="#E8EFFB"/>
+                                <path d="M25.3632 20.6687L17.8632 28.1687C17.3632 28.6687 16.5631 28.6687 16.1631 28.1687C15.6631 27.6687 15.6631 26.8687 16.1631 26.4687L22.7631 19.8687L16.1631 13.2687C15.6631 12.7687 15.6631 11.9687 16.1631 11.5687C16.6631 11.0687 17.4632 11.0687 17.8632 11.5687L25.3632 19.0687C25.5632 19.2687 25.7631 19.6687 25.7631 19.9687C25.7631 20.0687 25.6632 20.4687 25.3632 20.6687Z" fill="#8230FA"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="press-navigation__all-pages">
+                    <span @click="resolveSlide(slides.indexOf(slide))" v-for="slide in slides" :class="{ 'active-slide': slides.indexOf(slide) === currentSlide - 1 }"  class="press-navigation__slides">{{ slide }}</span>
                 </div>
             </div>
             <div class="quote">
@@ -75,7 +96,7 @@
     name: "FifthScroll",
     data() {
       return {
-        slides: ['01', '02', '03', '04'],
+        slides: ['01', '02', '03'],
         pressReleases: [
           {
             slideNumber: 1,
@@ -94,7 +115,7 @@
             logo: './assets/img/press-logo.png',
             publicationName: 'Esquire 3' ,
             text: 'Esquire is a monthly men\'s magazine founded in 1932 in the USA, where it is published by Hearst Corporation. '
-          }
+          },
         ],
         quotes: [
           {
@@ -120,6 +141,9 @@
       }
     },
    methods: {
+     resolveSlide(slide) {
+        this.currentSlide  = slide + 1
+     },
      previousSlide() {
        if (this.currentSlide === 1)  {
          return this.currentSlide = 1
@@ -138,7 +162,10 @@
 
 <style scoped lang="scss">
     @import url('https://fonts.googleapis.com/css?family=Questrial');
-
+    .press-navigation-mobile {
+        display: none;
+        z-index: 2000;
+    }
     .active {
         display: block !important;
     }
@@ -265,5 +292,83 @@
         display: flex;
         align-items: end;
         color: #636683;
+    }
+
+    @media (max-width: 500px), (max-height: 420px) {
+        .press-navigation {
+            display: none;
+        }
+        .layout {
+            flex-direction: column;
+            padding: 20px 0;
+            min-height: 550px;
+            align-items: center;
+            max-width: 500px;
+        }
+        .press {
+            width: 90%;
+            display: block;
+            &__title {
+                margin: 0;
+                color: #fff;
+                font-size: 25px;
+                text-align: center;
+            }
+            &__descr-title {
+                font-size: 15px;
+            }
+            &__descr {
+                color: #fff;
+                line-height: 14px;
+                font-size: 12px;
+            }
+        }
+        .quote {
+            padding: 45px;
+            width: 90%;
+            top: 246px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            &__review-text {
+                font-size: 12px;
+                line-height: 16px;
+            }
+            &__name {
+                font-size: 15px;
+                margin: 20px 0 5px 0;
+            }
+            &__position {
+                font-size: 12px;
+                margin: 0 0 20px 0;
+            }
+        }
+        .background-press {
+            height: 334px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .quote-reviews {
+            & > img {
+                width: 25px;
+            }
+        }
+        .read-more-button {
+            font-size: 12px;
+            & > svg {
+                width: 22px;
+            }
+        }
+        .press-navigation-mobile {
+            display: flex;
+            flex-direction: row-reverse;
+            position: absolute;
+            bottom: 18px;
+        }
+    }
+    .active-slide {
+        color: #824bf7;
     }
 </style>

@@ -218,4 +218,104 @@
             right: -600px;
         }
     }
+
+    @media (max-width: 500px), (max-height: 420px) {
+        .layout {
+            padding: 20px 0;
+            max-width: 320px;
+            height: 600px;
+        }
+        .title {
+            font-size: 25px;
+            margin: 0;
+        }
+        .background-sixth-scroll {
+            &__tree-left {
+                width: 100px;
+                height: 150px;
+                top: 270px;
+                right: -18px;
+                left: auto;
+                z-index: 1;
+            }
+            &__tree-right {
+                width: 100px;
+                height: 150px;
+                top: 270px;
+                left: 12px;
+                z-index: 1;
+            }
+            &__hips-one {
+                width: 120%;
+                height: 96px;
+                left: -31px;
+                top: 300px;
+            }
+            &__phones {
+                width: 320px;
+                height: 320px;
+                top: 153px;
+                left: -16px;
+                background-size: 183%;
+                z-index: 3;
+            }
+            &__hips-two {
+                width: 120%;
+                height: 96px;
+                left: -31px;
+                top: 300px;
+            }
+            &__city-two {
+                width: 100px;
+                height: 200px;
+                top: 190px;
+                right: auto;
+                left: 0;
+            }
+            &__city {
+                width: 100px;
+                height: 200px;
+                top: 190px;
+                right: 0;
+                left: auto;
+            }
+            &__man-one {
+                width: 64px;
+                height: 100px;
+                top: 356px;
+            }
+            &__man-two {
+                width: 131px;
+                height: 150px;
+                top: 398px;
+                right: auto;
+                left: 0px;
+            }
+            &__man-three {
+                width: 130px;
+                height: 150px;
+                top: 341px;
+                right: -17px;
+            }
+            &__bush {
+                height: 146px;
+                width: 600px;
+                right: -300px;
+            }
+        }
+        .animate-tree-one {
+            animation: none;
+        }
+
+        .move-man-one {
+            animation: none;
+        }
+        .move-man-two {
+            animation: none;
+        }
+
+        .bush-animation {
+            animation: none;
+        }
+    }
 </style>

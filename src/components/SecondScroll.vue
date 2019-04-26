@@ -57,22 +57,24 @@
                     <SecondIllustration v-if="isSecondDescription" />
                     <ThirdIllustration v-if="isThirdDescription" />
                 </div>
-                <vue-circle
-                    v-if="activateAnimation"
-                    :progress="progressValue"
-                    :size="circleWidth"
-                    :reverse="false"
-                    line-cap="round"
+                <DesktopCircle
+                    v-if="outerWidth >= 812"
+                    @progress="progress"
+                    :activateAnimation="activateAnimation"
+                    :progressValue="progressValue"
+                    :isDuration="isDuration"
                     :fill="fill"
-                    empty-fill="rgba(251, 251, 251, 0)"
-                    :animation-start-value="0.0"
-                    :animation="isDuration"
-                    :start-angle="0"
-                    insert-mode="append"
-                    :thickness="3"
-                    ref="circle"
-                    @vue-circle-progress="progress">
-                </vue-circle>
+                    :currentProgress="currentProgress"
+                    />
+                <MobileCircle
+                    v-if="outerWidth <= 812"
+                    @progress="progress"
+                    :activateAnimation="activateAnimation"
+                    :progressValue="progressValue"
+                    :isDuration="isDuration"
+                    :fill="fill"
+                    :currentProgress="currentProgress"
+                />
             </div>
             <h1 v-if="circleWidth === 250" class="options-container__heading title">How it works</h1>
         </div>
@@ -81,7 +83,8 @@
 
 <script>
 /* eslint-disable */
-import VueCircle from 'vue2-circle-progress'
+import DesktopCircle from './Circles/CircleDesktop'
+import MobileCircle from './Circles/CircleMobile'
 import PhoneIllustration from './illustration/PhoneIllustration.vue'
 import SecondIllustration from './illustration/SecondIllustration.vue'
 import ThirdIllustration from './illustration/ThirdIllustration.vue'
@@ -89,10 +92,11 @@ import ThirdIllustration from './illustration/ThirdIllustration.vue'
 export default {
   name: 'SecondScroll',
   components: {
-    VueCircle,
     PhoneIllustration,
     SecondIllustration,
-    ThirdIllustration
+    ThirdIllustration,
+    DesktopCircle,
+    MobileCircle
   },
   data () {
     return {
@@ -180,18 +184,6 @@ export default {
         return window.removeEventListener('scroll', this.handleScroll)
       }
     },
-    'currentProgress'(value) {
-      if(value === 75) {
-        setTimeout(() => {
-          this.$refs.circle.updateProgress(0)
-        }, 2000)
-      }
-      if (value === 0) {
-        setTimeout(() => {
-          this.$refs.circle.updateProgress(75)
-        }, 2000)
-      }
-    }
   },
 }
 </script>

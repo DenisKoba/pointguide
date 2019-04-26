@@ -9,7 +9,7 @@
                       :perPage="2"
                       :autoplayTimeout="5000"
                       :perPageCustom="perPageCount"
-                      :autoplay="true">
+                      >
                 <slide>
                     <div class="customer-reviews">
                         <div class="customer-reviews__review">
@@ -159,11 +159,42 @@
     }
     @media (max-width: 500px), (max-height: 420px){
         .title {
-            font-size: 32px;
+            font-size: 25px;
+            line-height: 30px;
             margin: 0;
         }
         .layout {
             padding: 0;
+        }
+        .customer-reviews__review {
+            padding: 5px 20px;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+            max-width: 66%;
+            box-sizing: border-box;
+            &-text {
+                line-height: 18px;
+                font-weight: 400;
+            }
+            .customer-reviews__coma {
+                width: 19px;
+            }
+        }
+        .customer-reviews__author {
+           & > img {
+               width: 40px;
+               height: 40px;
+           }
+        }
+        .customer-reviews__name {
+            font-size: 11px;
+        }
+        .customer-reviews__position {
+            font-size: 10px;
+        }
+        .customer-reviews__author {
+            margin: 31px 0 0 0;
         }
     }
 
