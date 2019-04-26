@@ -130,4 +130,107 @@
             opacity: 1
         }
     }
+    @media (max-width: 500px), (max-height: 420px) {
+        .phone-illustration {
+            top: 13px;
+            left: 13px;
+        }
+        .phone-illustration__pocket {
+            top: 126px;
+            right: calc(50% - 67px);
+            width: 132px;
+            z-index: 2;
+        }
+
+        .phone-illustration__phone {
+            width: 88px;
+            left: calc(50% - 43px);
+            top: 10px !important;
+            animation: animate-phone 1.5s ease forwards
+        }
+
+        .phone-illustration__background {
+            width: 170px;
+            top: 25px;
+            left: calc(50% - 81px);
+            animation: animate-background-data-v-3065bd62 2s ease forwards;
+        }
+
+        .phone-illustration__eyes {
+            width: 38px;
+            top: 101px;
+            left: calc(50% - 19px);
+            animation: animate-pulse 1.5s ease infinite;
+            animation-delay: 2s
+        }
+
+        .phone-illustration__eyes, .phone-illustration__mouth {
+            z-index: 3;
+            animation: animate-eyes 1.5s ease forwards
+        }
+
+        .phone-illustration__mouth {
+            top: 116px;
+            width: 16px;
+            left: calc(50% - 8px);
+        }
+
+        @keyframes animate-phone {
+            0% {
+                top: 150px
+            }
+            100% {
+                top: 70px
+            }
+        }
+
+        @keyframes animate-eyes {
+            0% {
+                z-index: 1;
+                opacity: 0
+            }
+            60% {
+                opacity: 0
+            }
+            to {
+                z-index: 3;
+                opacity: 1
+            }
+        }
+
+        @keyframes animate-background {
+            0% {
+                opacity: 0;
+                top: 250px
+            }
+            50% {
+                opacity: 0
+            }
+            to {
+                opacity: 1;
+                top: 42px
+            }
+        }
+
+        @keyframes animate-pulse {
+            0% {
+                transform: scale(1.1)
+            }
+            50% {
+                transform: scale(1)
+            }
+            to {
+                transform: scale(1.1)
+            }
+        }
+
+        @keyframes animate-illustration {
+            0% {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+    }
 </style>

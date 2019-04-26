@@ -45,10 +45,14 @@ export default {
     }
     @media (max-width: 500px), (max-height: 420px){
         .button {
-            height: 40px;
+            height: 45px;
         }
         .container {
             margin: 20px 0 0 0;
+            justify-content: space-around;
+        }
+        .container__google-play {
+            padding: 0 0 0 10px;
         }
     }
 </style>

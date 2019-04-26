@@ -2,11 +2,11 @@
     <div id="second-scroll" class="wrapper second-scroll">
         <div class="layout layout-second-scroll">
             <div class="options-container">
-                <h1 class="options-container__heading title">How it works</h1>
+                <h1 v-if="circleWidth === 400" class="options-container__heading title">How it works</h1>
                 <div id="third-scroll" class="options" @click="updateProgress(25, 1)">
                     <div :class="{ 'active-description': isFirstDescription }" class="options__wrapper">
-                        <img v-if="isFirstDescription" src="../assets/img/eye-icon-active.svg" />
-                        <img v-else src="../assets/img/eye-icon.svg" />
+                        <img class="icon" v-if="isFirstDescription" src="../assets/img/eye-icon-active.svg" />
+                        <img class="icon" v-else src="../assets/img/eye-icon.svg" />
                         <div class="options__descr">
                             <h3 :class="{ 'active-description': isFirstDescription }" class="options__name">How it works</h3>
                             <p v-if="isFirstDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
@@ -15,8 +15,8 @@
                 </div>
                 <div class="options" @click="updateProgress(50, 2)">
                     <div :class="{ 'active-description': isSecondDescription }" class="options__wrapper">
-                        <img v-if="isSecondDescription" src="../assets/img/point-icon-active.svg" />
-                        <img v-else src="../assets/img/point-icon.svg" />
+                        <img class="icon" v-if="isSecondDescription" src="../assets/img/point-icon-active.svg" />
+                        <img class="icon" v-else src="../assets/img/point-icon.svg" />
                         <div class="options__descr">
                             <h3 :class="{ 'active-description': isSecondDescription }" class="options__name">Friends</h3>
                             <p v-if="isSecondDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
@@ -25,8 +25,8 @@
                 </div>
                 <div class="options" @click="updateProgress(75, 3)">
                     <div :class="{ 'active-description': isThirdDescription }" class="options__wrapper">
-                        <img src="../assets/img/smile-icon-active.svg" v-if="isThirdDescription" />
-                        <img src="../assets/img/smile-icon.svg" v-else />
+                        <img class="icon" src="../assets/img/smile-icon-active.svg" v-if="isThirdDescription" />
+                        <img class="icon" src="../assets/img/smile-icon.svg" v-else />
                         <div class="options__descr">
                             <h3 :class="{ 'active-description': isThirdDescription }" class="options__name">Travel</h3>
                             <p v-if="isThirdDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
@@ -53,27 +53,28 @@
                       class="circle__point-four circle__point">
                 </span>
                 <div class="circle__background">
-                    <PhoneIllustration  />
-                    <!--<SecondIllustration v-if="isSecondDescription" />
-                    <ThirdIllustration v-if="isThirdDescription" />-->
+                    <PhoneIllustration v-if="isFirstDescription" />
+                    <SecondIllustration v-if="isSecondDescription" />
+                    <ThirdIllustration v-if="isThirdDescription" />
                 </div>
                 <vue-circle
-                        v-if="activateAnimation"
-                        :progress="progressValue"
-                        :size="400"
-                        :reverse="false"
-                        line-cap="round"
-                        :fill="fill"
-                        empty-fill="rgba(251, 251, 251, 0)"
-                        :animation-start-value="0.0"
-                        :animation="isDuration"
-                        :start-angle="0"
-                        insert-mode="append"
-                        :thickness="3"
-                        ref="circle"
-                        @vue-circle-progress="progress">
+                    v-if="activateAnimation"
+                    :progress="progressValue"
+                    :size="circleWidth"
+                    :reverse="false"
+                    line-cap="round"
+                    :fill="fill"
+                    empty-fill="rgba(251, 251, 251, 0)"
+                    :animation-start-value="0.0"
+                    :animation="isDuration"
+                    :start-angle="0"
+                    insert-mode="append"
+                    :thickness="3"
+                    ref="circle"
+                    @vue-circle-progress="progress">
                 </vue-circle>
             </div>
+            <h1 v-if="circleWidth === 250" class="options-container__heading title">How it works</h1>
         </div>
     </div>
 </template>
@@ -106,10 +107,18 @@ export default {
       thirdActive: false,
       firstCircle: true,
       secondCircle: false,
+      outerWidth: 0,
+      circleWidth: 400,
     }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.handleResize)
+    this.outerWidth = window.innerWidth
+    if (window.outerWidth < 500) {
+        this.circleWidth = 250
+    }
+
   },
   computed: {
     isFirstDescription() {
@@ -153,8 +162,17 @@ export default {
     handleScroll() {
       this.scrolled = Math.floor(window.pageYOffset)
     },
+    handleResize() {
+      this.outerWidth = Math.floor(window.innerWidth)
+    },
   },
   watch: {
+    'outerWidth'(value) {
+        if (value <= 812) {
+            return this.circleWidth = 250
+        }
+        this.circleWidth = 400
+    },
     'scrolled'(value) {
       if (value > 100) {
         this.scrolled = 0
@@ -285,8 +303,65 @@ export default {
         color: #292a4b;
     }
     @media (max-width: 500px), (max-height: 420px){
+        .options-container {
+            width: 90%;
+            padding: 20px 0 40px;
+        }
+        .layout-second-scroll {
+            padding: 0;
+        }
+        .options-container__heading {
+            font-size: 32px;
+        }
         .layout-second-scroll {
             flex-direction: column-reverse;
+        }
+        .circle {
+            position: relative;
+
+            &__background {
+                width: 250px;
+                height: 250px;
+
+                &:after {
+                    content: "";
+                    width: 243px;
+                    height: 243px;
+                }
+            }
+            &__point {
+                width: 10px;
+                height: 10px;
+            }
+            &__point-one {
+                right: -5px;
+                top: 46%;
+            }
+            &__point-two {
+                right: calc(50% - 10px);
+                bottom: -4px;
+            }
+            &__point-three {
+                top: calc(50% - 10px);
+                left: -5px;
+            }
+
+            &__point-four {
+                left: calc(50% - 8px);
+                top: -6px;
+            }
+        }
+        .icon {
+            width: 30px;
+        }
+        .options__name {
+            font-size: 18px;
+        }
+        .options__text {
+            font-size: 14px;
+        }
+        .layout {
+            max-width: 320px;
         }
     }
 </style>

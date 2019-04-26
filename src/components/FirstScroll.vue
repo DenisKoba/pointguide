@@ -408,6 +408,7 @@ export default {
     @media (max-height: 420px) {
         .layout {
             width: 80%;
+            max-width: 320px;
         }
         .background-first-scroll__field-left {
             left: 188px;

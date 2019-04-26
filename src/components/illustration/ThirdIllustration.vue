@@ -91,4 +91,27 @@
             opacity: 1
         }
     }
+    @media (max-width: 500px), (max-height: 420px) {
+        .third-illustration {
+            top: 13px;
+            left: 13px;
+        }
+        .third-illustration__grass {
+            top: 50%;
+            right: 0;
+            width: 200px;
+        }
+
+        .third-illustration__man {
+            width: 130px;
+            left: calc(50% - 43px);
+            top: 47px;
+        }
+
+        .third-illustration__point {
+            width: 146px;
+            top: 26px;
+            left: calc(50% - 103px);
+        }
+    }
 </style>

@@ -1,13 +1,9 @@
 <template>
     <div id="third-scroll" class="wrapper third-section">
         <div class="layout">
-            <div class="download__mobile">
-                <div :class="{ 'active-first': scrolledEnougth }" class="download__mobile_first download__mobile_phone"></div>
-                <div :class="{ 'active-second': scrolledEnougth }" class="download__mobile_second download__mobile_phone"></div>
-            </div>
             <div class="download__descr">
                <h2 class="download__heading ">Download</h2>
-                <svg width="422" height="49" viewBox="0 0 422 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo" width="422" height="49" viewBox="0 0 422 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15.1027 33.3305V41.2663C15.1027 45.2342 12.3252 47.615 7.96049 47.615C3.19899 47.615 0.818237 44.8374 0.818237 41.2663V7.93579C0.818237 3.96787 3.59578 1.58713 7.96049 1.58713H21.0546C34.1487 1.58713 41.291 8.72938 41.291 17.4588C41.291 26.1882 34.1487 33.3305 21.0546 33.3305C21.0546 33.3305 15.1027 33.3305 15.1027 33.3305ZM21.0546 21.4267C24.2289 21.4267 26.2129 19.4428 26.2129 17.062C26.2129 14.6812 24.2289 12.6973 21.0546 12.6973H15.1027V21.0299L21.0546 21.4267Z" fill="white"/>
                     <path d="M89.3028 28.569C89.3028 39.6792 80.9702 48.0118 67.4793 48.0118C53.9883 48.0118 45.6557 39.6792 45.6557 28.569V19.4428C45.6557 8.33263 53.9883 0 67.4793 0C80.9702 0 89.3028 8.33263 89.3028 19.4428V28.569ZM74.6215 19.4428C74.6215 14.2845 71.4472 11.1102 67.4793 11.1102C63.5113 11.1102 60.337 14.2845 60.337 19.4428V28.569C60.337 33.7273 63.5113 36.9016 67.4793 36.9016C71.4472 36.9016 74.6215 33.7273 74.6215 28.569V19.4428Z" fill="white"/>
                     <path d="M110.333 40.8695C110.333 44.8374 107.555 47.2182 103.191 47.2182C98.429 47.2182 96.0482 44.4406 96.0482 40.8695V6.74542C96.0482 2.7775 98.8258 0.396759 103.191 0.396759C107.952 0.396759 110.333 3.1743 110.333 6.74542V40.8695Z" fill="white"/>
@@ -23,6 +19,10 @@
                 <h3 class="download__text descr">Enjoy high quality audio tours from different authors and styles. Сustomize
                     your experience and have fun traveling</h3>
                 <DownloadButtons />
+            </div>
+            <div class="download__mobile">
+                <div :class="{ 'active-first': scrolledEnougth }" class="download__mobile_first download__mobile_phone"></div>
+                <div :class="{ 'active-second': scrolledEnougth }" class="download__mobile_second download__mobile_phone"></div>
             </div>
         </div>
     </div>
@@ -79,6 +79,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: row-reverse;
     }
     .download {
         &__mobile {
@@ -127,5 +128,56 @@
     .active-second {
         top: -10px;
         transition: 1.5s;
+    }
+    @media (max-width: 500px), (max-height: 420px){
+        .download__descr {
+            width: 90%;
+        }
+        .layout {
+            display: block;
+            padding: 20px 0;
+            max-width: 320px;
+        }
+        .download__mobile {
+            height: 250px;
+            width: 90%;
+            display: block;
+            position: relative;
+        }
+        .download__mobile_phone {
+            width: 250px;
+            height: 326px;
+        }
+        .download__mobile_first {
+            left: -35px;
+            top: 0;
+        }
+        .download__mobile_second {
+            left: 58px;
+            top: 40px;
+        }
+        .download__heading {
+            font-size: 16px;
+            text-align: center;
+            margin: 0;
+        }
+        .download__descr {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 0 40px 0;
+        }
+        .third-section {
+            padding: 20px 0;
+        }
+        .download__text {
+            text-align: center;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        .logo {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
+        }
     }
 </style>
