@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="press-navigation__all-pages">
-                    <span v-for="slide in slides"  class="press-navigation__slides">{{ slide }}</span>
+                    <span @click="resolveSlide(slides.indexOf(slide))" v-for="slide in slides"  class="press-navigation__slides">{{ slide }}</span>
                 </div>
             </div>
             <div class="quote">
@@ -244,6 +244,7 @@
             padding: 0 22px 0 0;
             font-size: 20px;
             color: #aaadbe;
+            cursor: pointer;
         }
         &__current-slide {
             font-size: 30px;
