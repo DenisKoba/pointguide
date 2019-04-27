@@ -147,7 +147,7 @@ export default {
     .v--modal {
       width: 90% !important;
       margin: auto;
-      top: calc(50% - 200px) !important;
+      top: calc(40% - 200px) !important;
     }
     .v--modal-box .v--modal {
       width: 90% !important;

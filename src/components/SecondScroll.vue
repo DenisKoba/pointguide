@@ -321,8 +321,8 @@ export default {
 
                 &:after {
                     content: "";
-                    width: 243px;
-                    height: 243px;
+                    width: 244px;
+                    height: 243.5px;
                 }
             }
             &__point {
@@ -335,11 +335,11 @@ export default {
             }
             &__point-two {
                 right: calc(50% - 10px);
-                bottom: -4px;
+                bottom: -2px;
             }
             &__point-three {
                 top: calc(50% - 10px);
-                left: -5px;
+                left: -6px;
             }
 
             &__point-four {

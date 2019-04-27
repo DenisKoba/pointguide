@@ -313,6 +313,7 @@
         .press {
             width: 90%;
             display: block;
+            padding: 0 0 20px 0;
             &__title {
                 margin: 0;
                 color: #fff;
@@ -371,6 +372,7 @@
             display: flex;
             position: relative;
             flex-direction: row-reverse;
+            margin: 10px 0 0 0;
         }
         .fifth-scroll {
             padding: 0;
