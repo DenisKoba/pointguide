@@ -94,7 +94,6 @@ export default {
     margin: 50px auto 0;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
   .VueCarousel-navigation-button {
     top: 38% !important;
@@ -140,18 +139,36 @@ export default {
     width: 600px !important;
     top: calc(50% - 300px) !important;
   }
-  @media (max-width: 500px), (max-height: 420px) {
+  @media (max-width: 768px), (max-height: 420px) {
     .VueCarousel-inner {
       margin: 30px auto 0;
     }
     .v--modal {
       width: 90% !important;
+      margin: auto;
+      top: calc(50% - 200px) !important;
     }
     .v--modal-box .v--modal {
       width: 90% !important;
       left: 0 !important;
       right: 0 !important;
       margin: auto !important;
+    }
+    .close {
+      top: 15px !important;
+      right: 15px !important;
+      & > img {
+        width: 30px;
+      }
+    }
+    .button {
+      font-size: 14px !important;
+    }
+    .VueCarousel-navigation-next {
+      right: 45px !important;
+    }
+    .VueCarousel-navigation-prev {
+      left: 45px !important;
     }
   }
 </style>

@@ -72,7 +72,8 @@
         background: -webkit-linear-gradient(top, #9b70fa 0%,#590ff2 100%);
         background: linear-gradient(to bottom, #9b70fa 0%,#590ff2 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9b70fa', endColorstr='#590ff2',GradientType=0 );
-        padding: 100px 0;
+        padding: 100px 20px;
+        box-sizing: border-box;
         overflow: hidden;
     }
     .layout {
@@ -129,7 +130,7 @@
         top: -10px;
         transition: 1.5s;
     }
-    @media (max-width: 500px), (max-height: 420px){
+    @media (max-width: 768px), (max-height: 420px){
         .download__descr {
             width: 90%;
         }

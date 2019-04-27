@@ -6,10 +6,60 @@
                       navigationPrevLabel=""
                       :navigationEnabled="true"
                       :loop="true"
-                      :perPage="2"
                       :autoplayTimeout="5000"
                       :perPageCustom="perPageCount"
                       >
+                <slide>
+                    <div class="customer-reviews">
+                        <div class="customer-reviews__review">
+                            <img class="customer-reviews__coma" src="../assets/img/coma.png">
+                            <h3 class="customer-reviews__review-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                            </h3>
+                        </div>
+                        <div class="customer-reviews__author">
+                            <img src="../assets/img/author-photo.png"/>
+                            <div class="customer-reviews__name-wrapper">
+                                <h3 class="customer-reviews__name">Name</h3>
+                                <p class="customer-reviews__position">Tourist</p>
+                            </div>
+                        </div>
+                    </div>
+                </slide>
+                <slide>
+                    <div class="customer-reviews">
+                        <div class="customer-reviews__review">
+                            <img class="customer-reviews__coma" src="../assets/img/coma.png">
+                            <h3 class="customer-reviews__review-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                            </h3>
+                        </div>
+                        <div class="customer-reviews__author">
+                            <img src="../assets/img/author-photo.png"/>
+                            <div class="customer-reviews__name-wrapper">
+                                <h3 class="customer-reviews__name">Name</h3>
+                                <p class="customer-reviews__position">Tourist</p>
+                            </div>
+                        </div>
+                    </div>
+                </slide>
+                <slide>
+                    <div class="customer-reviews">
+                        <div class="customer-reviews__review">
+                            <img class="customer-reviews__coma" src="../assets/img/coma.png">
+                            <h3 class="customer-reviews__review-text">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                            </h3>
+                        </div>
+                        <div class="customer-reviews__author">
+                            <img src="../assets/img/author-photo.png"/>
+                            <div class="customer-reviews__name-wrapper">
+                                <h3 class="customer-reviews__name">Name</h3>
+                                <p class="customer-reviews__position">Tourist</p>
+                            </div>
+                        </div>
+                    </div>
+                </slide>
                 <slide>
                     <div class="customer-reviews">
                         <div class="customer-reviews__review">
@@ -77,7 +127,7 @@
     },
       data() {
         return {
-            perPageCount: [[320, 1], [1199, 2]],
+            perPageCount: [[320, 1], [769, 2]],
         }
       }
   }
@@ -91,7 +141,8 @@
     }
     .fourth-scroll {
         background-color: #f3f7fb;
-        padding: 30px 0 60px 0;
+        padding: 30px 0 60px;
+        box-sizing: border-box;
     }
     .customer-reviews {
         align-items: center;
@@ -157,7 +208,7 @@
     .layout-fourth-scroll {
         padding: 30px 0;
     }
-    @media (max-width: 500px), (max-height: 420px){
+    @media (max-width: 768px), (max-height: 420px){
         .title {
             font-size: 25px;
             line-height: 30px;

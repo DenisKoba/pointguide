@@ -43,7 +43,7 @@ export default {
             padding: 0 20px 0 0;
         }
     }
-    @media (max-width: 500px), (max-height: 420px){
+    @media (max-width: 768px), (max-height: 420px){
         .button {
             height: 45px;
         }

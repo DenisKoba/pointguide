@@ -219,7 +219,7 @@
         }
     }
 
-    @media (max-width: 500px), (max-height: 420px) {
+    @media (max-width: 768px), (max-height: 420px) {
         .layout {
             padding: 20px 0;
             max-width: 320px;

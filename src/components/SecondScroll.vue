@@ -189,6 +189,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    .second-scroll {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
     .options-container {
         width: 40%;
         &__heading {
@@ -294,7 +298,7 @@ export default {
         align-items: end;
         color: #292a4b;
     }
-    @media (max-width: 500px), (max-height: 420px){
+    @media (max-width: 768px), (max-height: 420px){
         .options-container {
             width: 90%;
             padding: 20px 0 40px;
@@ -354,6 +358,9 @@ export default {
         }
         .layout {
             max-width: 320px;
+        }
+        .second-scroll {
+            padding: 0;
         }
     }
 </style>

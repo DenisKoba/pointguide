@@ -232,6 +232,8 @@ export default {
         display: block;
         height: 920px;
         width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
     .header {
@@ -345,7 +347,7 @@ export default {
     .slide-up.animate-active {
         transform: translateY(-100px);
     }
-    @media (max-width: 500px), (max-height: 420px){
+    @media (max-width: 768px), (max-height: 420px){
         .first-scroll {
             padding: 0 10px;
             box-sizing: border-box;
@@ -368,6 +370,55 @@ export default {
         .first-scroll {
             height: 650px;
         }
+        .background-first-scroll {
+             &__man {
+                 background-size: contain;
+                 width: 224px;
+                 height: 320px;
+                 bottom: -44px;
+                 z-index: 20;
+                 left: 20px;
+             }
+             &__bush {
+                 background-position: bottom right;
+                 background-size: contain;
+                 height: 196px;
+                 width: 600px;
+                 right: -300px;
+                 bottom: 0;
+             }
+             &__field-left {
+                 background-size: cover;
+                 height: 200px;
+                 width: 600px;
+                 bottom: 0;
+                 left: auto;
+                 right: -50px;
+             }
+             &__field-right {
+                 height: 200px;
+                 width: 600px;
+                 background-position: bottom right;
+                 background-size: cover;
+                 bottom: 0;
+                 right: auto;
+                 left: -34px;
+             }
+             &__sights {
+                 bottom: 35px;
+             }
+         }
+    }
+    @media (max-height: 420px) {
+        .layout {
+            width: 80%;
+            max-width: 320px;
+        }
+        .background-first-scroll__field-left {
+            left: 188px;
+        }
+    }
+    @media (max-width: 500px) {
         .background-first-scroll {
             &__man {
                 background-size: contain;
@@ -403,15 +454,6 @@ export default {
             &__sights {
                 bottom: 35px;
             }
-        }
-    }
-    @media (max-height: 420px) {
-        .layout {
-            width: 80%;
-            max-width: 320px;
-        }
-        .background-first-scroll__field-left {
-            left: 188px;
         }
     }
     @media (max-width: 320px) {

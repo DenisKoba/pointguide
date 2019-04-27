@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="modal-container-wrapper">
         <div class="modal-container">
             <div class="close" @click="hideModal">
                 <img src="../../assets/img/close.svg">
@@ -88,6 +88,15 @@
         &:hover {
             opacity: 1;
             transition: .3s;
+        }
+    }
+    @media (max-width: 768px), (max-height: 420px) {
+        .modal-container {
+            padding: 40px 20px 20px 20px;
+        }
+        .title {
+            font-size: 25px;
+            margin: 25px 0 0 0;
         }
     }
 </style>

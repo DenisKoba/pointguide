@@ -91,7 +91,7 @@
             opacity: 1
         }
     }
-    @media (max-width: 500px), (max-height: 420px) {
+    @media (max-width: 768px), (max-height: 420px) {
         .third-illustration {
             top: 13px;
             left: 13px;
