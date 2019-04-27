@@ -7,6 +7,7 @@
     <FifthScroll />
     <SixthScroll />
     <modals-container />
+    <Preloader v-if="preloader"/>
   </div>
 </template>
 

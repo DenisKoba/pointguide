@@ -7,6 +7,7 @@
                       :navigationEnabled="true"
                       :loop="true"
                       :autoplayTimeout="5000"
+                      :autoplay="true"
                       :perPageCustom="perPageCount"
                       >
                 <slide>
