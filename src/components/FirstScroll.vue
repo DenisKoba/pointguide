@@ -426,6 +426,9 @@ export default {
          }
     }
     @media (max-width: 500px), (max-height: 420px) {
+        .logo {
+            width: 140px;
+        }
         .background-first-scroll {
             &__piza {
                 background-image: url(/static/img/piza.63efe97.png);
@@ -476,9 +479,6 @@ export default {
         }
     }
     @media (max-width: 320px) {
-        .logo {
-            width: 140px;
-        }
         .header__contact {
             font-size: 12px;
         }
