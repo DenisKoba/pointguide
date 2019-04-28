@@ -165,6 +165,7 @@
     .fifth-scroll {
         padding: 0 20px;
         box-sizing: border-box;
+        background-color: #f3f7fb;
     }
     .press-navigation-mobile {
         display: none;

@@ -9,7 +9,7 @@
                         <img class="icon" v-else src="../assets/img/eye-icon.svg" />
                         <div class="options__descr">
                             <h3 :class="{ 'active-description': isFirstDescription }" class="options__name">How it works</h3>
-                            <p v-if="isFirstDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
+                            <p :class="{ 'active-description-animation' : isFirstDescription }" v-if="isFirstDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                         <img class="icon" v-else src="../assets/img/point-icon.svg" />
                         <div class="options__descr">
                             <h3 :class="{ 'active-description': isSecondDescription }" class="options__name">Friends</h3>
-                            <p v-if="isSecondDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
+                            <p :class="{ 'active-description-animation' : isSecondDescription }" v-if="isSecondDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <img class="icon" src="../assets/img/smile-icon.svg" v-else />
                         <div class="options__descr">
                             <h3 :class="{ 'active-description': isThirdDescription }" class="options__name">Travel</h3>
-                            <p v-if="isThirdDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
+                            <p :class="{ 'active-description-animation' : isThirdDescription }" v-if="isThirdDescription" class="options__text">Select a city and pick a tour you like. Guide by user scores and reviews</p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@ export default {
   data () {
     return {
       fill: { gradient: ['#9b70fa', '#590ff2'] },
-      durationValue: 10000,
+      durationValue: 15000,
       progressValue: 75,
       currentProgress: 0,
       scrolled: 0,
@@ -195,6 +195,7 @@ export default {
     }
     .options-container {
         width: 40%;
+        height: 400px;
         &__heading {
             margin-bottom: 30px;
             color: #292a4b;
@@ -298,10 +299,24 @@ export default {
         align-items: end;
         color: #292a4b;
     }
+    .active-description-animation {
+        animation: animate-text ease 1s;
+    }
+    @keyframes animate-text {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        100% {
+            height: 50px;
+            opacity: 1;
+        }
+    }
     @media (max-width: 768px), (max-height: 420px){
         .options-container {
             width: 90%;
             padding: 20px 0 40px;
+            height: 200px;
         }
         .layout-second-scroll {
             padding: 0;

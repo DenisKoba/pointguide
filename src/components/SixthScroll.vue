@@ -60,6 +60,9 @@
 </script>
 
 <style scoped lang="scss">
+    .sixth-scroll {
+        background-color: #f3f7fb;
+    }
     .background-sixth {
         padding: 150px 0;
         height: 1400px;
@@ -156,8 +159,8 @@
             background-image: url("../assets/img/footer-man.png");
         }
         &__bush {
-            background-image: url('../assets/img/bush.png');
-            background-position: bottom right;
+            background-image: url('../assets/img/footer-bush.png');
+            background-position: bottom left;
             background-size: contain;
             height: 280px;
             width: 1300px;

@@ -142,7 +142,7 @@
     }
     .fourth-scroll {
         background-color: #f3f7fb;
-        padding: 30px 0 60px;
+        padding: 30px 0 80px;
         box-sizing: border-box;
     }
     .customer-reviews {

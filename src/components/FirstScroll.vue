@@ -2,8 +2,9 @@
     <div id="first-scroll" class="wrapper first-scroll">
         <div class="background-first-scroll">
                 <div class="background-first-scroll__sights background-style"></div>
+                <div class="background-first-scroll__piza background-style"></div>
                 <div :style="{ margin: `0 0 -${scrolled / 300}%  -${scrolled / 80}%` }"  class="background-first-scroll__field-left background-style"></div>
-                <div :style="{ margin: `0 -${scrolled / 300}% -${scrolled / 80}% 0` }" class="background-first-scroll__field-right background-style"></div>
+                <div :style="{ margin: `0 -${scrolled / 300}% -${scrolled / 120}% 0` }" class="background-first-scroll__field-right background-style"></div>
                 <div :style="{ margin: `${scrolled / 20}px`, transform: `scale(${1 + scrolled / 5000 })` }" class="background-first-scroll__man background-style"></div>
                 <div :style="{ margin: `0 -${scrolled / 200}% -${scrolled / 70}% 0`, transform: `scale(${1 - scrolled / 5000 })` }" class="background-first-scroll__bush background-style"></div>
         </div>
@@ -285,6 +286,16 @@ export default {
         z-index: 1;
         right: 0;
         margin: auto;
+        &__piza {
+            background-image: url('../assets/img/piza.png');
+            height: 500px;
+            width: 150px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            bottom: 30px;
+            right: 0;
+        }
         &__sights {
             background-image: url('../assets/img/sights.png');
             height: 50%;
@@ -348,9 +359,16 @@ export default {
         transform: translateY(-100px);
     }
     @media (max-width: 768px), (max-height: 420px){
+        .layout {
+            max-width: 320px;
+        }
+        .heading {
+            padding: 0;
+        }
         .first-scroll {
             padding: 0 10px;
             box-sizing: border-box;
+            height: 590px;
         }
         .logo {
             width: 175px;
@@ -360,15 +378,13 @@ export default {
             margin: 0;
         }
         .title {
-            font-size: 32px;
-            line-height: 35px;
+            font-size: 25px;
+            line-height: 30px;
+            margin: 20px 0 0 0;
         }
         .descr {
             font-size: 14px;
             line-height: 16px;
-        }
-        .first-scroll {
-            height: 650px;
         }
         .background-first-scroll {
              &__man {
@@ -409,17 +425,19 @@ export default {
              }
          }
     }
-    @media (max-height: 420px) {
-        .layout {
-            width: 80%;
-            max-width: 320px;
-        }
-        .background-first-scroll__field-left {
-            left: 188px;
-        }
-    }
-    @media (max-width: 500px) {
+    @media (max-width: 500px), (max-height: 420px) {
         .background-first-scroll {
+            &__piza {
+                background-image: url(/static/img/piza.63efe97.png);
+                height: 200px;
+                width: 80px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                bottom: 68px;
+                left: 68%;
+                z-index: -1;
+            }
             &__man {
                 background-size: contain;
                 width: 224px;
@@ -435,17 +453,18 @@ export default {
                 width: 600px;
                 right: -300px;
                 bottom: 0;
+                z-index: 20;
             }
             &__field-left {
                 background-size: cover;
                 height: 200px;
                 width: 600px;
                 bottom: 0;
-                left: 0;
+                left: 100px;
             }
             &__field-right {
                 height: 200px;
-                width: 600px;
+                width: 300px;
                 background-position: bottom right;
                 background-size: cover;
                 bottom: 0;

@@ -115,6 +115,7 @@
             color: #fff;
             font-size: 22px;
             line-height: 30px;
+            margin: 0;
         }
         &__heading {
             color: #fff;

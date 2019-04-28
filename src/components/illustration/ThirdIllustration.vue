@@ -41,7 +41,7 @@
         width: 214px;
         left: calc(50% - 85px);
         top: 78px;
-        animation: animate-guy 1s ease forwards;
+        animation: animate-guy .7s ease forwards;
         z-index: 3
     }
 
@@ -49,7 +49,7 @@
         width: 215px;
         top: 65px;
         left: calc(50% - 165px);
-        animation: animate-background 1.5s ease forwards;
+        animation: animate-background 1.9s ease forwards;
         z-index: 2
     }
 
@@ -73,9 +73,6 @@
 
     @keyframes animate-background {
         0% {
-            opacity: 0
-        }
-        60% {
             opacity: 0
         }
         to {
